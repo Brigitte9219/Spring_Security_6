@@ -77,7 +77,12 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder(); //encripta y valida si las contraseñas son correctas
     }
+
+    //con este método me encripta la contraseña y se reemplaza donde están todos los password
+    /*public static void main(String[] args){
+        System.out.println(new BCryptPasswordEncoder().encode("1234"));
+    }*/
 
 }
